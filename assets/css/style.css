@@ -1,0 +1,121 @@
+
+/** Styling both forms **/
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#register{	
+	z-index: 21;
+	opacity: 0;
+}
+#login{
+	z-index: 22;
+}
+#toregister:target ~ #wrapper #register,
+#tologin:target ~ #wrapper #login{
+	z-index: 22;
+	-webkit-animation-name: fadeInLeft;
+	-moz-animation-name: fadeInLeft;
+	-ms-animation-name: fadeInLeft;
+	-o-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	-webkit-animation-delay: .1s;
+	-moz-animation-delay: .1s;
+	-o-animation-delay: .1s;
+	-ms-animation-delay: .1s;
+	animation-delay: .1s;
+}
+#toregister:target ~ #wrapper #login,
+#tologin:target ~ #wrapper #register{
+	-webkit-animation-name: fadeOutLeft;
+	-moz-animation-name: fadeOutLeft;
+	-ms-animation-name: fadeOutLeft;
+	-o-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
+}
+
+/** the actual animation, credit where due : http://daneden.me/animate/ ***/
+.animate{
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: both;
+	
+	-moz-animation-duration: 0.5s;
+	-moz-animation-timing-function: ease;
+	-moz-animation-fill-mode: both;
+	
+	-o-animation-duration: 0.5s;
+	-o-animation-timing-function: ease;
+	-o-animation-fill-mode: both;
+	
+	-ms-animation-duration: 0.5s;
+	-ms-animation-timing-function: ease;
+	-ms-animation-fill-mode: both;
+	
+	animation-duration: 0.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+@keyframes fadeInLeft {
+ 0% {
+ opacity: 0;
+ transform: translateX(-20px);
+ }
+ 
+ 100% {
+ opacity: 1;
+ transform: translateX(0);
+ }
+}
+ #toregister:target ~ #wrapper #login,
+#tologin:target ~ #wrapper #register{
+ animation-name: fadeOutLeftBig;
+}
+ 
+@keyframes fadeOutLeft {
+ 0% {
+ opacity: 1;
+ transform: translateX(0);
+ }
+ 
+ 100% {
+ opacity: 0;
+ transform: translateX(-20px);
+ }
+}
+.lt8 #register{	
+	display: none;
+}
+
+
+

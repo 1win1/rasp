@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+  <title>Расписание | МГППУ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link href="assets/css/bootstrap-select.css" rel="stylesheet">
+  
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/scripts.js"></script>
+  <script src="assets/js/jquery-1.10.2.js"></script>
+  <script src="assets/js/jquery-ui-1.10.4.custom.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.tabify.js"></script>
+  
+  
+  <link href="assets/css/datepicker.css" rel="stylesheet">
+  <link href="assets/css/datepicker3.css" rel="stylesheet">
+  <script src="assets/js/bootstrap-datepicker.js"></script>
+  <style type="text/css">
+  html, body {
+    height: 100%;
+}
+    body {
+        padding-top: 0px;
+        padding-bottom: 0px;
+		font-family: 'Roboto', sans-serif;
+		background: url(images/type.png) repeat;
+      }
+	  
+	  h1,h2,h3,h4,h5,h6{
+		font-weight:200;
+		text-shadow: 0 1px 3px rgba(0,0,0,.4);
+	  }
+
+	  .inner-top-bg{
+			position:absolute;
+			top:0px;
+			left:0px;
+			bottom:0px;
+			display:inline-block;
+			width:100%;
+			min-width:100%;
+			height:100%;
+			min-height:100%;
+			background: rgba(0, 0, 0, 0.3);
+			
+	  }
+	  .jumbotron {
+			background: none;
+			text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px;
+			position:fixed;
+			top:0px;
+			left:0px;
+			right:0px;
+			z-index:1;
+			width:100%;
+			text-align:center;
+			padding-right:0px;
+			padding-left:0px;
+	  }
+	  
+	  .jumbotron h1{
+			color:#fff;
+			padding-top:220px;
+
+	  }
+	  
+	  .jumbotron p.lead {
+			color:#fff;
+			font-size:120%;
+			max-width:60%;
+			margin-left:auto;
+			margin-right:auto;
+
+			position:relative;
+		}
+		.btn.btn-start{
+			background: rgba(0,0,0, 0);
+			border:4px solid #fff;
+			color:#fff;
+			padding: 19px 24px;
+			font-size: 24px;
+			font-weight: 200;
+			margin-top:40px;
+			z-index:2;
+		}		
+		.btn.btn-start:hover{
+			background: rgba(0,0,0, 0.5);
+			color:#fff;
+			padding: 19px 24px;
+			font-size: 24px;
+			font-weight: 200;
+			margin-top:40px;
+			z-index:2;
+		}
+
+	  
+
+	
+	
+	  
+	  .color-white{
+		color:#fff;
+	  }
+	  
+	  .panel{
+		background: rgba(250,250,250, 0.65);
+		margin-bottom:30px;
+		-webkit-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow:    1px 1px 12px rgba(0, 0, 0, 0.5);
+		box-shadow:         1px 1px 12px rgba(0, 0, 0, 0.5);
+		border:1px solid rgba(250,250,250, 0.5);
+	  }	  
+	  
+	  .panel-heading, .panel-footer{
+		background: rgba(250,250,250, 0.4);
+		-webkit-box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+		-moz-box-shadow:    1px 1px 12px rgba(50, 50, 50, 0.5);
+		box-shadow:         1px 1px 12px rgba(50, 50, 50, 0.5);
+		
+	  }
+	  .panel h3{
+		text-shadow: 0px 1px 0px rgba(250, 250, 250, 1);
+	  }
+	  .panel .list-group-item{
+		background: rgba(250,250,250, 0.7);
+	  }
+
+	  /****************** NAVIGATION STYLES *************************/
+	 .navbar {
+		background-color: #f9f9f9;
+		border:0px;
+		box-shadow:0px -3px 0px rgba(50,50,50, 0.25) inset;
+	}
+	  navbar-fixed-top{
+		z-index:1030;
+	  }
+	  
+	.navbar .nav > li > a {
+		float: none;
+		padding: 15px 20px 15px;
+		color: #777777;
+		text-decoration: none;
+		text-shadow: none;
+		font-size:14px;
+		font-wight:b0px;
+		}
+		.navbar-fixed-top {
+			margin-bottom: 0px;old;
+		text-transform:uppercase;
+	}
+	.navbar .nav > .active > a, 
+	.navbar .nav > .active > a:hover, 
+	.navbar .nav > .active > a:focus {
+		color: #333;
+		text-decoration: none;
+		background-color: #fff;
+		-webkit-box-shadow:  none;
+			-moz-box-shadow:   none;
+				box-shadow:  none;
+	}
+
+
+	.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+		color: #333;
+		font-weight:600;
+		box-shadow:0px -3px 0px rgba(50,50,50, 0.53) inset;
+		}
+		
+		/*************** @media ******************/
+	@media (max-width: 1200px) {
+	
+	}
+	@media (max-width: 979px){
+		body{
+			padding:
+		}
+		
+		.navbar-fixed-top, .navbar-fixed-bottom {
+			position: fixed;
+		}
+		
+		.navbar .container {
+			width: auto;
+			padding: 0px 20px;
+		}
+		
+		.navbar .brand {
+			padding-right: 10px;
+			padding-left: 10px;
+			margin: 0 0 0 15px;
+		}
+		.container{
+			padding:0px 20px;
+		}
+		
+		.jumbotron {
+			padding: 0px;
+			top:30px;
+		}
+		.jumbotron h1 {
+			color: #fff;
+			padding-top: 150px;
+			font-size:40px;
+		}
+		footer .page-header h3{
+			padding-top:100px !important;
+		}
+	}
+	@media (max-width: 762px){
+	
+	  
+	  footer{
+		position: relative;
+		border-top: 1px solid #9EC5DA;
+		clear: both;
+		background: none repeat scroll 0% 0% #1C1C1C;
+	  }
+	  
+	}
+	
+	table.faculty {
+	bordercolor:transparent;
+	border-collapse:collapse;
+	border-spacing:0;
+	width: 3500px;
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 1;
+	}
+	
+	th.size{
+	font-size: 45px;
+	width: 35px;
+	color: black;
+	}
+	th.size2{
+	font-size:30px;
+	width: 35px;
+	color: black;
+	}
+	
+	table.group{
+	bordercolor:transparent;
+	border-collapse:collapse;
+	border-spacing:0;
+	width: 400px;
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 1;
+	}
+	<!--расписания вкладки -->
+	#tab2, #tab3 {position: fixed; }
+
+	.menu1 > a,
+	.menu1 #tab2:target ~ a:nth-of-type(1),
+	.menu1 #tab3:target ~ a:nth-of-type(1),
+	.menu1 > div { 
+	padding: 5px;
+	}
+
+	.menu1 > a { 
+	line-height: 28px;
+	background: #fff; 
+	text-decoration: none; }
+
+	#tab2,
+	#tab3,
+	.menu1 > div,
+	.menu1 #tab2:target ~ div:nth-of-type(1),
+	.menu1 #tab3:target ~ div:nth-of-type(1) {
+	display: none; 
+	}
+
+	.menu1 > div:nth-of-type(1),
+	.menu1 #tab2:target ~ div:nth-of-type(2),
+	.menu1 #tab3:target ~ div:nth-of-type(3) {
+	display: block; 
+	}
+
+	.menu1 > a:nth-of-type(1),
+	.menu1 #tab2:target ~ a:nth-of-type(2),
+	.menu1 #tab3:target ~ a:nth-of-type(3) {
+	border-bottom: 2px solid #fff;
+	}
+	
+	<!--расписания, таблица--->
+	.nav-tabs{
+	 text-align: center;
+	 }
+	.nav li{
+	font-size:18px;
+	font-family: 'Roboto', sans-serif;
+	}
+	.nav li.active a {
+	font-size:20px;
+	font-family: 'Roboto', sans-serif;
+	}
+	
+	.nav-li{
+
+	}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="navbar navbar-default navbar-fixed-top">
+          <style>
+            .body{padding-top:70px}
+          </style>
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand">Расписание МГППУ</a>
+              <p class="navbar-text navbar-right hidden-xs">сделанное с любовью к ВУЗу
+                <br>
+              </p>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#">Link</a>
+                </li>
+                <li>
+                  <a href="#">Link</a>
+                </li>
+              </ul>
+              <a type="button" class="btn btn-default navbar-btn navbar-right">Sign in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+  <div class="container"  style=" background-color: white; min-height: 100% ">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+        <hr>
+      </div>
+    </div>
+    <div class="row clearfix">
+
+
+
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12  column" id="block-selection">
+	  <h1>	Посмотрите расписание</h1>
+            <div class="tabbable" id="tabs-879708" >
+              <ul class="nav nav-pills">
+                <li class="nav-li active ">
+                  <a href="#s1" data-toggle="tab">Расписание предметов</a>
+                </li>
+               <li class="nav-li">
+                  <a href="#s2" data-toggle="tab">Расписание преподавателей</a>
+                </li>
+                <li class="nav-li">
+                  <a href="#s3" data-toggle="tab">Расписание аудиторий</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="s1">
+                  <div class="container">
+                    <br>
+                    <div>
+					<div class="row clearfix">
+					<div class="col-md-9 column" >
+					
+					<div class="row clearfix">
+					<div class="col-md-5 column" >
+					<div class="container" id="faculty">
+					 <label for="faculty">Укажите факультет</label>
+      			  <select name=faculty id=faculty class="bootstrap-select" style="width: 300px;">
+				  <option value='' selected=selected > - Выберите факультет-</option>
+					<optgroup label="Г">
+					<option value=1>Государственное и муниципальное  управление</option>
+					<optgroup label="Д">
+					<option value=2>Дистанционное обучение</option>
+					<optgroup label="И">
+					<option value=3>Иностранные языки</option>
+					<option value=4>Информационные технологии</option>
+					<optgroup label="К">
+					<option value=5>Консультативная и клиническая психология</option>
+					<option value=6>Клиническая и специальная психология</option>
+					<optgroup label="П">
+					<option value=7>Психология образования </option>
+					<optgroup label="С">
+					<option value=8>Социальная педагогика</option>
+					<option value=9>Социальная психология </option>
+					<option value=10>Социальные коммуникации</option>
+					<optgroup label="Э">
+					<option value=11>Экстремальная психология</option>
+					<optgroup label="Ю">
+					<option value=12>Юридическая психология</option>
+				  </select>
+				  </div>
+				 </div>
+				<div class="col-md-1 column" >  </div>
+					<div class="col-md-4 column" >
+					<div class="container" id="group">
+					<label for="group">№ Группы</label>
+					<select name=group id=group class="bootstrap-select">
+					<option value='' selected=selected > - Выберите факультет-</option>
+					<optgroup label="1">
+					<option value=1>1.1</option>
+					<option value=2>1.2</option>
+					<option value=3>1.3</option>
+					
+					<optgroup label="2">
+					
+					<option value=4>2.1</option>
+					<option value=5>2.2</option>
+					<option value=6>2.3</option>
+					<optgroup label="3">
+					<option value=7>3.1</option>
+					<option value=8>3.2</option>
+					<option value=9>3.3</option>
+					<option value=10>3.4</option>
+					<option value=11>3.5</option>
+					<optgroup label="4">
+					<option value=12>4.1</option>
+					<option value=13>4.2</option>
+					<option value=14>4.3</option>
+				  </select>
+				</div>
+				</div>
+			</div>
+					<br>
+					<div class="table">
+
+                        <label for="from">с:</label>
+                        <input type="text" id="dpd1" name="from" class="textfield">
+                        <label for="to">до:</label>
+                        <input type="text" id="dpd2" name="to" class="textfield/">
+
+                      </div>
+				
+                      <button class="btn btn-primary" style="height: 40px;" type="submit">Посмотреть расписание</button>
+
+
+                    </div>
+									
+					</div>
+                  </div>
+				  </div>
+                </div>
+
+                <div class="tab-pane" id="s2">
+                 <div class="container">
+                    <br>
+                    <div>
+					<div class="row clearfix">
+					<div class="col-md-5 column" >
+					 <div>
+                        <label for="teacher">Преподаватель</label>
+                        <select class="bootstrap-select" title="Пожалуйста, выберете преподавателя" name="teacher" id="teacher" data-live-search="true"></select>
+                      </div>
+                      <br>
+
+                      <div class="table">
+                        <label for="from">с:</label>
+                        <input type="text" id="dpd3" name="from" class="textfield">
+                        <label for="to">до:</label>
+                        <input type="text" id="dpd4" name="to" class="textfield/">
+                      </div>
+                      <button class="btn btn-primary" style="height: 40px;" type="submit">Посмотреть расписание преподавател</button>
+
+                      
+                    </div>
+					
+										
+					</div>
+                  </div>
+				  </div>
+                </div>
+
+	
+                <div class="tab-pane" id="s3">
+                 <div class="container">
+                    <br>
+                    <div>
+					<div class="row clearfix">
+					<div class="col-md-5 column" >
+					  <div>
+                        <label for="class">Номер аудитории</label>
+                        <select class="bootstrap-select" title="Пожалуйста, выберете аудиторию" name="class" id="class" data-live-search="true"></select>
+                      </div>
+                      <br>
+                      <div class="table">
+                        <label for="from">с:</label>
+                        <input type="text" id="dpd5" name="from" class="input-medium search-query">
+                        <label for="to">до:</label>
+                        <input type="text" id="dpd6" name="to" class="input-medium search-query">
+                      </div>
+
+                      <button class="btn btn-primary" style="height: 40px;" type="submit">Посмотреть расписание для аудитории</button>
+
+
+                      
+                    </div>
+							
+					</div>
+                  </div>
+				  </div>
+                </div>
+              </div>
+            </div>
+		</div>
+      
+     
+
+      <!-- ниже панель логина -->
+
+      <div class="col-md-3 col-lg-3 column visible-lg visible-md">
+        <h1 class="text-left">Авторизация</h1>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="inputEmail3" type="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="inputPassword3" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Remember me</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+        </form>
+
+        
+
+      </div>
+
+      <!-- выше панель логина -->
+
+      <!-- ниже панель мобильного логина -->
+
+      <div class="col-xs-12 col-sm-6 column hidden-lg">
+        <h1 class="text-left">...или зарегистрируйтесь!</h1>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+
+            <div class="col-sm-12">
+              <input class="form-control" id="inputEmail3" type="email" placeholder="E-mail">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-sm-12">
+              <input class="form-control" id="inputPassword3" type="password" placeholder="Пароль">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Remember me</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+          <strong>Мобильная версия!</strong>Включился блок мобильного логина для маленьких экранов
+          <a href="#" class="alert-link">alert link</a>
+        </div>
+
+      </div>
+      <!-- выше панель мобильного логина -->
+
+    </div>
+
+	
+	 <!-- ниже панель мобильного расписания -->
+
+         <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 column hidden-lg">
+        <div class="row clearfix">
+          <div class="col-xs-10 col-sm-10 column" >
+            <div class="tabbable" id="tabs-879708" >
+              <ul class="nav nav-pills">
+                <li class="nav-li active ">
+                  <a href="#s1" data-toggle="tab">Расписание предметов</a>
+                </li>
+               <li class="nav-li">
+                  <a href="#s2" data-toggle="tab">Расписание преподавателей</a>
+                </li>
+                <li class="nav-li">
+                  <a href="#s3" data-toggle="tab">Расписание аудиторий</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="s1">
+                  <div class="container">
+                    <br>
+                    <div>
+					
+					<div class="container" id="faculty">
+					<h4>Выберите факультет</h4>
+      			  <select name=faculty id=faculty class="bootstrap-select" style="width: 250px;">
+				  <option value='' selected=selected > - Выберите факультет-</option>
+					<optgroup label="Г">
+					<option value=1>Государственное и муниципальное  управление</option>
+					<optgroup label="Д">
+					<option value=2>Дистанционное обучение</option>
+					<optgroup label="И">
+					<option value=3>Иностранные языки</option>
+					<option value=4>Информационные технологии</option>
+					<optgroup label="К">
+					<option value=5>Консультативная и клиническая психология</option>
+					<option value=6>Клиническая и специальная психология</option>
+					<optgroup label="П">
+					<option value=7>Психология образования </option>
+					<optgroup label="С">
+					<option value=8>Социальная педагогика</option>
+					<option value=9>Социальная психология </option>
+					<option value=10>Социальные коммуникации</option>
+					<optgroup label="Э">
+					<option value=11>Экстремальная психология</option>
+					<optgroup label="Ю">
+					<option value=12>Юридическая психология</option>
+				  </select>
+		
+				</div>
+				<br>
+			<div class="container" id="group">
+			<h4 class="text-left">Группа</h4>
+			<select name=faculty id=faculty class="bootstrap-select">
+			<option value='' selected=selected > - Выберите группу-</option>
+			<optgroup label="1">
+			<option value=1>1.1</option>
+			<option value=2>1.2</option>
+			<option value=3>1.3</option>
+			
+			<optgroup label="2">
+			
+			<option value=4>2.1</option>
+			<option value=5>2.2</option>
+			<option value=6>2.3</option>
+			<optgroup label="3">
+			<option value=7>3.1</option>
+			<option value=8>3.2</option>
+			<option value=9>3.3</option>
+			<option value=10>3.4</option>
+			<option value=11>3.5</option>
+			<optgroup label="4">
+			<option value=12>4.1</option>
+			<option value=13>4.2</option>
+			<option value=14>4.3</option>
+		  </select>
+        </div>
+        
+					<div class="table">
+
+                        <label for="from">с:</label>
+                        <input type="text" id="dpd1" name="from" class="textfield"> <br>
+                        <label for="to">до:</label>
+                        <input type="text" id="dpd2" name="to" class="textfield/">
+
+                      </div>
+				
+
+                      <button class="btn btn-primary" style="height: 40px;" type="submit">Посмотреть расписание</button>
+
+
+                      <script>
+                        var nowTemp = new Date();
+                        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                        	
+                        var checkin = $('#dpd1').datepicker({
+                          onRender: function(date) {
+                            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                          }
+                        }).on('changeDate', function(ev) {
+                          if (ev.date.valueOf() > checkout.date.valueOf()) {
+                            var newDate = new Date(ev.date)
+                            newDate.setDate(newDate.getDate() + 1);
+                            checkout.setValue(newDate);
+                          }
+                          checkin.hide();
+                          $('#dpd2')[0].focus();
+                        }).data('datepicker');
+                        var checkout = $('#dpd2').datepicker({
+                          onRender: function(date) {
+                            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+                          }
+                        }).on('changeDate', function(ev) {
+						  $(this).datepicker('hide');
+						});
+                      </script>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="s2">
+                  <div class="container">
+                    <br>
+                    <div>
+
+                      <div>
+                        <label for="teacher">Преподаватель</label>
+                        <select class="bootstrap-select" title="Пожалуйста, выберете преподавателя" name="teacher" id="teacher" data-live-search="true"></select>
+                      </div>
+                      <br>
+
+                      <div class="table">
+                        <label for="from">с:</label>
+                        <input type="text" id="dpd3" name="from" class="textfield">
+                        <label for="to">до:</label>
+                        <input type="text" id="dpd4" name="to" class="textfield/">
+                      </div>
+                      <button class="btn btn-primary" style="height: 40px;" type="submit">Посмотреть расписание преподавател</button>
+					
+                      <script>
+                        var nowTemp = new Date();
+                        		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                        		 
+                        		var checkin = $('#dpd3').datepicker({
+                        		  onRender: function(date) {
+                        			return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                        		  }
+                        		}).on('changeDate', function(ev) {
+                        		  if (ev.date.valueOf() > checkout.date.valueOf()) {
+                        			var newDate = new Date(ev.date)
+                        			newDate.setDate(newDate.getDate() + 1);
+                        			checkout.setValue(newDate);
+                        		  }
+                        		  checkin.hide();
+                        		  $('#dpd4')[0].focus();
+                        		}).data('datepicker');
+                        		var checkout = $('#dpd4').datepicker({
+                        		  onRender: function(date) {
+                        			return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+                        		  }
+                        		}).on('changeDate', function(ev) {
+								  $(this).datepicker('hide');
+								});
+                      </script>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="tab-pane" id="s3">
+                  <div class="container">
+                    <br>
+                    <div>
+                      <div>
+                        <label for="class">Номер аудитории</label>
+                        <select class="bootstrap-select" title="Пожалуйста, выберете аудиторию" name="class" id="class" data-live-search="true"></select>
+                      </div>
+                      <br>
+                      <div class="table">
+                        <label for="from">с:</label>
+                        <input type="text" id="dpd5" name="from" class="input-medium search-query">
+                        <label for="to">до:</label>
+                        <input type="text" id="dpd6" name="to" class="input-medium search-query">
+                      </div>
+
+                      <button class="btn btn-primary" style="height: 40px;" type="submit">Посмотреть расписание для аудитории</button>
+
+                      <script>
+                        var nowTemp = new Date();
+                        		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                        		 
+                        		var checkin = $('#dpd5').datepicker({
+                        		  onRender: function(date) {
+                        			return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                        		  }
+                        		}).on('changeDate', function(ev) {
+                        		  if (ev.date.valueOf() > checkout.date.valueOf()) {
+                        			var newDate = new Date(ev.date)
+                        			newDate.setDate(newDate.getDate() + 1);
+                        			checkout.setValue(newDate);
+                        		  }
+                        		  checkin.hide();
+                        		  $('#dpd6')[0].focus();
+                        		}).data('datepicker');
+                        		var checkout = $('#dpd6').datepicker({
+                        		  onRender: function(date) {
+                        			return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+                        		  }
+                        		}).on('changeDate', function(ev) {
+                        		  checkout.hide();
+                        		}).data('datepicker');
+                      </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr draggable="true">
+          </div>
+          <div class="col-xs-2 col-sm-2 column ">
+            <div class="alert alert-dismissable alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <h4>
+                Есть изменения!
+              </h4>
+              Уточните изменения у своего системного администратора.
+              <a href="#" class="alert-link">ссылка на администратора</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	 <!-- выше панель мобильного расписания -->
+	 
+	<div class="row clearfix">
+		<div class="col-md-8 column">
+			<div class="row clearfix">
+				<div class="col-md-6 column">
+					<blockquote class="pull-right">
+						<div class="datepicker datepicker-inline">
+						<label>с:</label>
+						<div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th class="cw">&nbsp;</th><th style="visibility: visible;" class="prev">«</th><th colspan="5" class="datepicker-switch">Май 2014</th><th style="visibility: visible;" class="next">»</th></tr><tr><th class="cw">&nbsp;</th><th class="dow">Пн</th><th class="dow">Вт</th><th class="dow">Ср</th><th class="dow">Чт</th><th class="dow">Пт</th><th class="dow">Сб</th><th class="dow">Вс</th></tr></thead><tbody><tr><td class="cw">18</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day disabled">4</td></tr><tr><td class="cw">19</td><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day disabled">11</td></tr><tr><td class="cw">20</td><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day today">15</td><td class="day">16</td><td class="day">17</td><td class="day disabled">18</td></tr><tr><td class="cw">21</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day disabled">25</td></tr><tr><td class="cw">22</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day disabled new">1</td></tr><tr><td class="cw">23</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day disabled new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="8" class="today">Сегодня</th></tr><tr><th style="display: none;" colspan="7" class="clear">Clear</th></tr></tfoot></table></div>
+						<div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev">«</th><th colspan="5" class="datepicker-switch">2014</th><th style="visibility: visible;" class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Янв</span><span class="month">Фев</span><span class="month">Мар</span><span class="month">Апр</span><span class="month">Май</span><span class="month">Июн</span><span class="month">Июл</span><span class="month">Авг</span><span class="month">Сен</span><span class="month">Окт</span><span class="month">Ноя</span><span class="month">Дек</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="8" class="today">Сегодня</th></tr><tr><th style="display: none;" colspan="7" class="clear">Clear</th></tr></tfoot></table></div>
+						<div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev">«</th><th colspan="5" class="datepicker-switch">2010-2019</th><th style="visibility: visible;" class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year new">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="8" class="today">Сегодня</th></tr><tr><th style="display: none;" colspan="7" class="clear">Clear</th></tr></tfoot></table></div>
+					</div>
+					</blockquote>
+				</div>
+				<div class="col-md-6 column">
+					<blockquote>
+						<div class="datepicker datepicker-inline">
+					<label>До:</label>
+						<div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th class="cw">&nbsp;</th><th style="visibility: visible;" class="prev">«</th><th colspan="5" class="datepicker-switch">Май 2014</th><th style="visibility: visible;" class="next">»</th></tr><tr><th class="cw">&nbsp;</th><th class="dow">Пн</th><th class="dow">Вт</th><th class="dow">Ср</th><th class="dow">Чт</th><th class="dow">Пт</th><th class="dow">Сб</th><th class="dow">Вс</th></tr></thead><tbody><tr><td class="cw">18</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day disabled">4</td></tr><tr><td class="cw">19</td><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day disabled">11</td></tr><tr><td class="cw">20</td><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day today">15</td><td class="day">16</td><td class="day">17</td><td class="day disabled">18</td></tr><tr><td class="cw">21</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day disabled">25</td></tr><tr><td class="cw">22</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day disabled new">1</td></tr><tr><td class="cw">23</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day disabled new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="8" class="today">Сегодня</th></tr><tr><th style="display: none;" colspan="7" class="clear">Clear</th></tr></tfoot></table></div>
+						<div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev">«</th><th colspan="5" class="datepicker-switch">2014</th><th style="visibility: visible;" class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Янв</span><span class="month">Фев</span><span class="month">Мар</span><span class="month">Апр</span><span class="month">Май</span><span class="month">Июн</span><span class="month">Июл</span><span class="month">Авг</span><span class="month">Сен</span><span class="month">Окт</span><span class="month">Ноя</span><span class="month">Дек</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="8" class="today">Сегодня</th></tr><tr><th style="display: none;" colspan="7" class="clear">Clear</th></tr></tfoot></table></div>
+						<div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev">«</th><th colspan="5" class="datepicker-switch">2010-2019</th><th style="visibility: visible;" class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year new">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="8" class="today">Сегодня</th></tr><tr><th style="display: none;" colspan="7" class="clear">Clear</th></tr></tfoot></table></div>
+					</div>
+					</blockquote>
+				</div>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							ЭТО
+						</th>
+						<th>
+							ТАБЛИЦА
+						</th>
+						<th>
+							С РАСПИСАНИЕМ
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							ПРЕМДЕТЫ
+						</td>
+						<td>
+							АУДИТОРИИ
+						</td>
+						<td>
+							ПРЕПОДАВАТЕЛИ
+						</td>
+					</tr>
+					<tr class="active">
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="danger">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4 column">
+			<div class="alert alert-dismissable alert-danger">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4>
+					ВНИМАНИЕ!
+				</h4> <strong>В расписании есть изменения!</strong><a href="#" class="alert-link"></a>
+			</div>
+			<div class="alert alert-success alert-dismissable">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4>
+					На следующую неделю изменений нет!
+				</h4> <strong>пока что</strong><a href="#" class="alert-link"></a>
+			</div>
+			<div class="alert alert-dismissable alert-info">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4>
+					Последнее СМС-уведомление:
+				</h4> <strong>Студенты группы 3.1 быть готовым к защите 27 мая!<br> - О.Ю.</strong><a href="#" class="alert-link"></a>
+			</div>
+		</div>
+	</div>
+	
+    <div class="row clearfix">
+      <div class="col-md-10 column">
+        <p>
+          Lorem ipsum dolor sit amet,
+          <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis
+          posuere diam ut cursus.
+          <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em>Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
+          <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+        </p>
+      </div>
+      <div class="col-md-2 column">
+        <address>
+          <strong>Twitter, Inc.</strong>
+          <br>795 Folsom Ave, Suite 600
+          <br>San Francisco, CA 94107
+          <br>
+          <abbr title="Phone">P:</abbr>(123) 456-7890</address>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

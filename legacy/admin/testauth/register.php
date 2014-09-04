@@ -6,24 +6,28 @@
 <body>
     <?
     // Скрипт регистрации пользователя register.php
-    // Страница регситрации нового пользователя
-
+    // Страница регистрации нового пользователя
 
     # Соединямся с БД
 
      //надо заменить на include connect.php
-    mysql_connect("localhost", "rasp_user", "raspuserpass");
 
-    mysql_select_db("rasp_db");
-
-
+    $connect = mysql_connect("localhost", "rasp_user", "raspuserpass");
+    if (!$connect) {
+        die('Ошибка соединения: ' . mysql_error());
+    }
+    
+    $db_select = mysql_select_db("rasp_db");
+    
+    if (!$db_select) {
+        die ('Не удалось выбрать нужную базу: ' . mysql_error());
+    }
 
     if(isset($_POST['submit']))
 
     {
 
         $err = array();
-
 
         # проверям логин
 
@@ -35,8 +39,6 @@
 
         }
 
-        
-
         if(strlen($_POST['login']) < 3 or strlen($_POST['login']) > 30)
 
         {
@@ -44,8 +46,6 @@
             $err[] = "Логин должен быть не меньше 3-х символов и не больше 30";
 
         }
-
-        
 
         # проверяем, не сущестует ли пользователя с таким именем
 
@@ -73,16 +73,11 @@
 
         {
 
-            
             $login = $_POST['login'];
-
-            
 
             # Убераем лишние пробелы и делаем двойное шифрование
 
             $password = md5(md5(trim($_POST['password'])));
-
-            
 
             mysql_query("INSERT INTO reg SET user_login='".$login."', user_password='".$password."'");
 

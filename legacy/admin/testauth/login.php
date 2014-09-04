@@ -8,8 +8,6 @@
 
     // Страница авторизации
 
-
-
     # Функция для генерации случайной строки
 
     function generateCode($length=6) {
@@ -28,13 +26,18 @@
 
     }
 
-
-
     # Соединямся с БД
 
-    mysql_connect("localhost", "rasp_user", "raspuserpass");
-
-    mysql_select_db("rasp_db");
+    $connect = mysql_connect("localhost", "rasp_user", "raspuserpass");
+    if (!$connect) {
+        die('Ошибка соединения: ' . mysql_error());
+    }
+    
+    $db_select = mysql_select_db("rasp_db");
+    
+    if (!$db_select) {
+        die ('Не удалось выбрать нужную базу: ' . mysql_error());
+    }
 
 
     if(isset($_POST['submit']))
@@ -46,9 +49,7 @@
         $query = mysql_query("SELECT user_id, user_password FROM reg WHERE user_login='".mysql_real_escape_string($_POST['login'])."' LIMIT 1");
 
         $data = mysql_fetch_assoc($query);
-
         
-
         # Соавниваем пароли
 
         //debug-block
@@ -62,7 +63,6 @@
         echo "<hr>";
         //debug-block end
 
-
         if($data['user_password'] === md5(md5($_POST['password'])))
 
         {
@@ -70,8 +70,6 @@
             # Генерируем случайное число и шифруем его
 
             $hash = md5(generateCode(10));
-
-                
 
             if(!@$_POST['not_attach_ip'])
 
@@ -85,21 +83,15 @@
 
             }
 
-            
-
             # Записываем в БД новый хеш авторизации и IP
 
             mysql_query("UPDATE reg SET user_hash='".$hash."' ".$insip." WHERE user_id='".$data['user_id']."'");
-
-            
 
             # Ставим куки
 
             setcookie("id", $data['user_id'], time()+60*60*24*30);
 
             setcookie("hash", $hash, time()+60*60*24*30);
-
-            
 
             # Переадресовываем браузер на страницу проверки нашего скрипта
 

@@ -1,50 +1,33 @@
 <?
 // Скрипт проверки
 # Соединямся с БД
-
-mysql_connect("localhost","maria","marythewebmaster");
-
-mysql_select_db("rasp_db");
-
+// mysql_connect("localhost", "myhost", "myhost");
+// mysql_select_db("testtable");
 
 header("Content-Type: text/html; charset=utf-8"); //указываем правильную кодировку текста html страницы
+include "sql.php";// or die("Не могу получить данные для подключения к БД!");
+
 if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
-
 {   
-
-    $query = mysql_query("SELECT *,INET_NTOA(ip) FROM reg WHERE id = '".intval($_COOKIE['id'])."' LIMIT 1");
-
+    $query = mysql_query("SELECT *,INET_NTOA(user_ip) FROM users WHERE user_id = '".intval($_COOKIE['id'])."' LIMIT 1");
     $userdata = mysql_fetch_assoc($query);
 
-
-    if(($userdata['hash'] !== $_COOKIE['hash']) or ($userdata['id'] !== $_COOKIE['id'])
- or (($userdata['ip'] !== $_SERVER['REMOTE_ADDR'])  and ($userdata['ip'] !== "0")))
+    if(($userdata['user_hash'] !== $_COOKIE['hash']) or ($userdata['user_id'] !== $_COOKIE['id'])
+ or (($userdata['user_ip'] !== $_SERVER['REMOTE_ADDR'])  and ($userdata['user_ip'] !== "0")))
 
     {
         setcookie("id", "", time() - 3600*24*30*12, "/");
         setcookie("hash", "", time() - 3600*24*30*12, "/");
-        echo "Хм, что-то не получилось";
-        echo "<br><a href=\"test4.html\">Главная</a>";
-        exit();
+        print "Хм, что-то не получилось";
     }
-
     else
-
     {
-        echo "Привет, ".$userdata['email'].". Авторизация прошла успешно!";
-        echo "<br><a href=\"test4.html\">Главная</a> <a href=\"lk.php\">Личный кабинет</a>";
+        print "Привет, ".$userdata['user_login'].". Всё работает!";
 
     }
-
 }
-
 else
-
 {
-
-    echo "Включите куки";
-    exit();
-
+    print "Включите куки";
 }
-
 ?>

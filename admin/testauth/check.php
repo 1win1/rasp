@@ -17,6 +17,7 @@
 		if(($userdata['user_hash'] !== $_COOKIE['hash']) or ($userdata['user_id'] !== $_COOKIE['id']) or (($userdata['INET_NTOA(user_ip)'] !== $_SERVER['REMOTE_ADDR'])  and ($userdata['user_ip'] !== "0"))){
 			setcookie("id", "", time() - 3600*24*30*12, "/");
 			setcookie("hash", "", time() - 3600*24*30*12, "/");//ошибка в формате преобразования IP 
+			error_log ("check ERROR. User data - IP: ".$_SERVER['REMOTE_ADDR']. "userdata_ip: ". $userdata['user_ip']." cookie_id: ".$_COOKIE['id']." cookie_hash: ".$_COOKIE['hash']);
 			print "Хм, что-то не получилось...";
 
 			// //debug-block
@@ -51,11 +52,12 @@
 		}
 
 		else{
-			
-			header("Location: http://kkakoipare.ru/admin/index.php"); exit();
+			error_log ("check PASSED. User data - IP: ".$_SERVER['REMOTE_ADDR']. "userdata_ip: ". $userdata['user_ip']." cookie_id: ".$_COOKIE['id']." cookie_hash: ".$_COOKIE['hash']);
+			header("Location: http://kkakoipare.ru/admin/index.php"); exit(); //это, наверное, надо будет убрать после подключения проверки к страницам.
 		}
 	}
 	else{
+		error_log ("check ERROR - cookie lost. User data - IP: ".$_SERVER['REMOTE_ADDR']. "userdata_ip: ". $userdata['user_ip']." cookie_id: ".$_COOKIE['id']." cookie_hash: ".$_COOKIE['hash']);
 		print "Включите куки";
 	}
 ?>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
         <meta charset="UTF-8">
         <title>Расписание МГППУ | Редактор расписания</title>
@@ -490,32 +489,7 @@ $('#faculty-selector').selectize();
 $('#group-selector').selectize();
 $('#days-selector').selectize();	
 $('#parity-selector').selectize();
-</script>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</script>
 
 </body>
 

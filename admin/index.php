@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>Расписание МГППУ | Панель администратора</title>
@@ -481,58 +480,6 @@
 
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 

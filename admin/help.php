@@ -1,9 +1,9 @@
+<?php require 'check.php'; ?>
 <!DOCTYPE html>
 <html>
-
 <head>
         <meta charset="UTF-8">
-        <title>Расписание МГППУ | Редактор расписания</title>
+        <title>Расписание МГППУ | Документация пользователя</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -183,7 +183,7 @@
         <div class="row">
           <div class="col-xs-12 connectedSortable">
             <h1 class="text-center text-info">
-              Выбор факультета Курса и Группы для изменения расписания
+              Помощь и документация пользователя
             </h1>
             <hr>
           </div>
@@ -251,35 +251,6 @@
 
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 

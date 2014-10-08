@@ -1,3 +1,4 @@
+<?php require 'check.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>

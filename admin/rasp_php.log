@@ -1,0 +1,8 @@
+[08-Oct-2014 20:37:25 UTC] PHP Warning:  require(ololo.php): failed to open stream: No such file or directory in /home/rasp/web/kkakoipare.ru/public_html/admin/index.php on line 1
+[08-Oct-2014 20:37:25 UTC] PHP Fatal error:  require(): Failed opening required 'ololo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/rasp/web/kkakoipare.ru/public_html/admin/index.php on line 1
+[08-Oct-2014 20:37:29 UTC] PHP Warning:  require(ololo.php): failed to open stream: No such file or directory in /home/rasp/web/kkakoipare.ru/public_html/admin/index.php on line 1
+[08-Oct-2014 20:37:29 UTC] PHP Fatal error:  require(): Failed opening required 'ololo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/rasp/web/kkakoipare.ru/public_html/admin/index.php on line 1
+[08-Oct-2014 20:39:37 UTC] PHP Parse error:  syntax error, unexpected '"Hello!"' (T_CONSTANT_ENCAPSED_STRING) in /home/rasp/web/kkakoipare.ru/public_html/admin/index.php on line 1
+[08-Oct-2014 20:39:40 UTC] PHP Parse error:  syntax error, unexpected '"Hello!"' (T_CONSTANT_ENCAPSED_STRING) in /home/rasp/web/kkakoipare.ru/public_html/admin/index.php on line 1
+[08-Oct-2014 20:40:02 UTC] Hello!
+[08-Oct-2014 20:44:53 UTC] Hello!
